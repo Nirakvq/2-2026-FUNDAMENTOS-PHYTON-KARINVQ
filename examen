@@ -1,0 +1,42 @@
+import pandas;
+class Pelicula:
+    def __init__(self, titulo,genero,duracion,
+                 presupuesto,calificacion):
+        self.titulo = titulo
+
+        self.genero = genero
+
+        self.duracion = duracion
+
+        self.presupuesto = presupuesto
+
+        self.calificacion = calificacion
+
+        self.mostrar = f"Titulo: {self.titulo}\nGenero: {self.genero}\nDuracion: {self.duracion}\nPresupuesto: {self.presupuesto}\nCalificacion: {self.calificacion}"
+
+object_01 = Pelicula("El Padrino","Drama",175,6000000,9.2)
+
+object_02 = Pelicula("Titanic","Romance",195,200000000,7.8)
+
+object_03 = Pelicula("Avatar","Ciencia Ficcion",162,237000000,7.8)
+
+object_04 = Pelicula("El Señor de los Anillos: El Retorno del Rey","Fantasia",201,94000000,8.9)
+
+object_05 = Pelicula("Forrest Gump","Drama",142,55000000,8.8)
+
+for i in [object_01,object_02,object_03,object_04,object_05]:
+    print(i.mostrar)
+for i in [object_01,object_02,object_03,object_04,object_05]:
+    print(i.mostrar)
+
+import pandas as pd
+
+data = {
+    "Titulo": [object_01.titulo, object_02.titulo, object_03.titulo, object_04.titulo, object_05.titulo],
+    "Genero": [object_01.genero, object_02.genero, object_03.genero, object_04.genero, object_05.genero],
+    "Duracion": [object_01.duracion, object_02.duracion, object_03.duracion, object_04.duracion, object_05.duracion],
+    "Presupuesto": [object_01.presupuesto, object_02.presupuesto, object_03.presupuesto, object_04.presupuesto, object_05.presupuesto],
+    "Calificacion": [object_01.calificacion, object_02.calificacion, object_03.calificacion, object_04.calificacion, object_05.calificacion]
+}
+
+df = pd.DataFrame(data)
